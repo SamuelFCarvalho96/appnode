@@ -12,4 +12,12 @@ function deleteAlunos(id, callback){
     global.conn.collection("aluno").remove({ _id: objectId(id) }, callback);
 }
 
-module.exports = { findAll, deleteAlunos }
+function insertAlunos(alunos, callback){
+    global.conn.collection("aluno").insert(alunos, callback);
+}
+
+function updateAlunos(id,alunos, callback){
+    global.conn.collection("aluno").update({_id: ObjectId(id), alunos, callback});
+}
+
+module.exports = { findAll, deleteAlunos,insertAlunos, updateAlunos }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body>
+      <h1><%= title %></h1>
+      <form action="/alunos/new" method="post">
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" name="nome" value="<%= alunos.nome %>"/>
+        </div>
+        <div class="form-group">
+            <label for="idade">Idade</label>
+            <input type="number" class="form-control" name="idade" value="<%= alunos.idade %>"/>
+            <small id="idadeHelpBlock" class="form-text text-muted">
+                idade, preencha somente números!
+            </small>
+        </div>
+        <input type="hidden" name="id" value="<%= alunos._id %>" />
+        <input type="submit" class="btn btn-primary" value="Salvar"/>
+        <a href="http://localhost:3000/alunos/all" class="btn btn-success">Voltar</a>
+     </form>
+  </body>
+  </html>
